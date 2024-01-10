@@ -22,7 +22,8 @@ const addUserValidator = [
           "select * from node.person where email = $1",
           [value]
         );
-        if (user) {
+        console.log(user);
+        if (user.rowCount > 0) {
           throw createHttpError("Email already in use..!");
         }
       } catch (err) {
@@ -38,11 +39,12 @@ const addUserValidator = [
     .custom(async (value) => {
       try {
         const user = await database.query(
-          "select * from node.person where email = $1",
+          "select * from node.person where mobile = $1",
           [value]
         );
-        if (user) {
-          throw createHttpError("Mobile already is use!");
+        console.log(user);
+        if (user.rowCount > 0) {
+          throw createHttpError("Mobile already is use..!");
         }
       } catch (err) {
         throw createHttpError(err.message);
