@@ -3,5 +3,7 @@
     "[javascript]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "workbench.colorTheme": "Monokai",
+    "workbench.preferredDarkColorTheme": "Default Dark Modern"
  }
