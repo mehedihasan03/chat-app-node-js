@@ -41,7 +41,7 @@
     const modal = document.querySelector("#add-user-modal");
     const form = document.querySelector("#add-user-form");
 
-    const successToast = Toast({
+    const successToast = Toastify({
       text: "User added successfully..! Reloading the list.......",
       duration: 1000,
     });
@@ -75,7 +75,7 @@
       const formData = new FormData(form);
 
       // send request to server
-      let response = await fetch("/user", {
+      let response = await fetch("/users", {
         method: "POST",
         body: formData,
       });
